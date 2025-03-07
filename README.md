@@ -7,7 +7,7 @@ It also includes comprehensive unit testing to ensure high code quality and syst
 Swagger UI is implemented for easy API testing.
 How to Set Up and Run the Project
 Clone the Repository
-git clone https://github.com/SheriKhan01/Inventory-Management-System.git
+git clone https://github.com/SheriKhan01/Inventory-System
 cd Inventory-Management-System
 Update the Database Connection String
 Open appsettings.json in the IMS.API project and update your database connection details.
