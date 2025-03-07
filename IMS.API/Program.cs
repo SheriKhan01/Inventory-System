@@ -44,8 +44,6 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "IMS API", Version = "v1" });
-
-    // 🔹 Enable JWT Authentication in Swagger UI
     var securityScheme = new OpenApiSecurityScheme
     {
         Name = "Authorization",
@@ -82,8 +80,6 @@ using (var scope = app.Services.CreateScope())
     {
         // Apply pending migrations
         context.Database.Migrate();
-
-        // Seed data (Categories, Suppliers, InventoryItems)
         await ApplicationDbContextSeed.SeedData(context, userManager, roleManager);
         logger.LogInformation("Database seeding completed successfully.");
     }
@@ -93,8 +89,6 @@ using (var scope = app.Services.CreateScope())
         throw;
     }
 }
-
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -103,7 +97,7 @@ if (app.Environment.IsDevelopment())
 
 
 app.UseHttpsRedirection();
-//app.UseMiddleware<GlobalExceptionMiddleware>();
+app.UseMiddleware<GlobalExceptionMiddleware>();
 app.UseAuthorization();
 
 app.MapControllers();
