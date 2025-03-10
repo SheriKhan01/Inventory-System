@@ -3,6 +3,9 @@ This Inventory Management System (IMS) is designed to efficiently manage invento
 It follows Clean Architecture for a well-structured and scalable system. 
 The project integrates Serilog for logging, In-Memory Caching for performance optimization, 
 JWT Authentication for secure access, Exception Middleware for error handling, and a Role-Based Access System to control user permissions. 
+Implemented FluentValidation for request validation.
+Implemented indexing in the configuration file.
+Added data seeding for initial data insertion.
 It also includes comprehensive unit testing to ensure high code quality and system reliability. 
 Swagger UI is implemented for easy API testing.
 How to Set Up and Run the Project
